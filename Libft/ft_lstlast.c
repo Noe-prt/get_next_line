@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npareti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nopareti <nopareti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 02:38:00 by npareti           #+#    #+#             */
-/*   Updated: 2024/11/10 03:56:55 by npareti          ###   ########.fr       */
+/*   Created: 2024/11/07 12:10:35 by nopareti          #+#    #+#             */
+/*   Updated: 2024/11/08 21:25:39 by nopareti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE
+#include "libft.h"
 
-#ifndef BUFFER_SIZE
-#define BUFFER_SIZE 1000
-
-#endif
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <stdio.h>
-
-char	*get_next_line(int fd);
-
-#endif
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
+	{
+		lst = lst->next;
+	}
+	return (lst);
+}
