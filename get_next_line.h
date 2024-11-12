@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npareti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nopareti <nopareti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 02:38:00 by npareti           #+#    #+#             */
-/*   Updated: 2024/11/11 21:47:29 by npareti          ###   ########.fr       */
+/*   Updated: 2024/11/12 01:49:23 by nopareti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE
+#define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
 #define BUFFER_SIZE 5
@@ -22,12 +22,13 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
-#include "Libft/libft.h"
 
 char	*get_next_line(int fd);
-/* contain_line functioncheck if str contain a endline ('\n') 
- * and return 0 if str does'nt contain a endline
- * or the index of the endline if he found it */
-int     contain_line(char *str);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr(char *s, int c);
+char	*ft_get_line(char	*stash);
+char	*ft_new_stash(char *stash);
+char	*ft_fill_stash(int fd, char *stash);
 
 #endif
