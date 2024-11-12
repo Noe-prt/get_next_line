@@ -6,7 +6,7 @@
 /*   By: nopareti <nopareti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 02:36:31 by nopareti          #+#    #+#             */
-/*   Updated: 2024/11/12 01:53:49 by nopareti         ###   ########.fr       */
+/*   Updated: 2024/11/12 02:17:36 by nopareti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_fill_stash(int fd, char *stash)
 {
 	char	*buff;
-	int	rd_bytes;
+	int		rd_bytes;
 
 	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
@@ -38,8 +38,9 @@ char	*ft_fill_stash(int fd, char *stash)
 
 char	*get_next_line(int fd)
 {
-	char	*line;
 	static char	*stash;
+	char		*line;
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
 	stash = ft_fill_stash(fd, stash);
@@ -47,7 +48,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = ft_get_line(stash);
 	stash = ft_new_stash(stash);
-	return (line);	
+	return (line);
 }
 /*
 int	main(void)
@@ -63,4 +64,3 @@ int	main(void)
 	return (0);
 }
 */
-

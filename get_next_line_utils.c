@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nopareti <nopareti@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/12 02:17:46 by nopareti          #+#    #+#             */
+/*   Updated: 2024/11/12 02:19:00 by nopareti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "get_next_line.h"
 
@@ -51,9 +63,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = 0;
 	if (s1)
 		while (s1[++i] != '\0')
-				str[i] = s1[i];
+			str[i] = s1[i];
 	while (s2[j] != '\0')
-			str[i++] = s2[j++];
+		str[i++] = s2[j++];
 	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
 	free(s1);
 	return (str);
@@ -61,7 +73,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 char	*ft_get_line(char	*stash)
 {
-	int	i;
+	int		i;
 	char	*line;
 
 	i = 0;
@@ -89,8 +101,8 @@ char	*ft_get_line(char	*stash)
 
 char	*ft_new_stash(char *stash)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*new_stash;
 
 	i = 0;
